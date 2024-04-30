@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('concerts', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
+            $table->string('nom');
+            $table->string('description');
+            $table->dateTime('date_debut');
+            $table->dateTime('date_fin');
+            $table->foreignId('lieu_id')->constrained()->onDelete('cascade');
+            // $table->decimal('prix', 8, 2);
+            $table->string('type')->nullable(); // concert, spectacle, festival
+            $table->integer('capacite')->nullable(); // nombre de places
+            $table->string('organisateur')->nullable(); // nom de l'organisateur
+            $table->string('url')->nullable(); // lien vers le site de l'organisateur
+            $table->dateTime('date_annonce')->nullable(); // date de l'annonce
+            $table->dateTime('date_vente')->nullable(); // date de début de vente
+            $table->dateTime('date_fin_vente')->nullable(); // date de fin de vente
             $table->timestamps();
         });
     }

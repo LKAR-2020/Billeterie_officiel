@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class lieu extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nom',
+        'adresse',
+        'localisation',
+        'ville',
+        'pays',
+        'description',
+        'type',
+        'website',
+        'phone',
+        'email',
+        'opening_hours',
+        'latitude',
+        'longitude',
+    ];
 }
