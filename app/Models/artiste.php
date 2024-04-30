@@ -23,4 +23,8 @@ class artiste extends Model
         'annee_debut',
         'annee_fin',
     ];
+    public function concerts()
+    {
+        return $this->belongsToMany(Concert::class, 'artiste_concert');
+    }
 }

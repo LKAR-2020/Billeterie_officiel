@@ -22,4 +22,12 @@ class billet extends Model
         'email',
         'telephone',
     ];
+    public function concert()
+    {
+        return $this->belongsTo(Concert::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -24,4 +24,8 @@ class lieu extends Model
         'latitude',
         'longitude',
     ];
+    public function concerts()
+    {
+        return $this->hasMany(Concert::class);
+    }
 }

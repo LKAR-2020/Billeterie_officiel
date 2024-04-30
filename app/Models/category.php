@@ -14,4 +14,8 @@ class category extends Model
     'ordre',
     'slug',
 ];
+public function concerts()
+{
+    return $this->belongsToMany(Concert::class, 'category_concert', 'categorie_id', 'concert_id');
+}
 }
