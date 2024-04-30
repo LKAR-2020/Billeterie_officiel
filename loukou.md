@@ -9,8 +9,6 @@ en ajoutant mes champs de ma migration dans la partir   protected $fillable = ['
 
 3. pour les differents changement utiliser la commande
 
-4. faire le meme processus pour les autres
-
 ``` text
 ctrl+shift+p
 ```
@@ -21,8 +19,40 @@ ensuite taper dans la barre de recherche
 git file history
 ```
 
-## routes
+1. faire le meme processus pour les autres
 
-je vais editer le fichier routes/web.php
+2. faire les migration dans mon fichier sqlite.
 
-je vais ajouter les routes
+``` text
+php artisan migrate:refresh
+```
+
+## Administration avec filament
+
+1. installation de laravolt/avatar <!-- il permet de generer des avatar des profil -->
+
+``` text
+composer require laravolt/avatar
+```
+
+ensuite
+
+``` text
+php artisan vendor:publish --provider="Laravolt\Avatar\ServiceProvider"
+```
+
+puis aller dans Le fichier Http\Controllers\Auth\PasswordResetLinkController.php
+
+``` laravel
+Avatar::create($request->name)->save(storage_path('app/public/avatar-'. $user->id . '.png'));
+```
+
+``` laravel
+use Laravolt\Avatar\Facade as Avatar;
+```
+
+1. installation de filament
+
+``` text
+composer require filament/filament
+```

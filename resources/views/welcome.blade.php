@@ -33,6 +33,7 @@
                                     >
                                         Dashboard
                                     </a>
+                                    <img src="{{ asset('storage/avatar-' . auth()->id() . '.png')}}" width="40" class=" mr-2 " >
                                 @else
                                     <a
                                         href="{{ route('login') }}"
